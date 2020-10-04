@@ -16,10 +16,14 @@ func Index(slice []string, needle string) (index int) {
 	var s string
 	for index, s = range slice {
 		if s == needle {
-			return
+			return index
 		}
 	}
 	return -1
+}
+
+func Contains(slice []string, needle string) bool {
+	return Index(slice, needle) != -1
 }
 
 func AppendIfNotFound(slice []string, s string) (newSlice []string) {
