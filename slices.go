@@ -2,10 +2,10 @@ package slices
 
 import "sort"
 
-func GetWithout(slice []string, without string) []string {
+func WithoutThis(slice []string, withoutThis string) []string {
 	cc := make([]string, 0, len(slice)-1)
 	for _, s := range slice {
-		if s != without {
+		if s != withoutThis {
 			cc = append(cc, s)
 		}
 	}
@@ -33,7 +33,7 @@ func AppendIfNotFound(slice []string, s string) (newSlice []string) {
 	return slice
 }
 
-func MergeStringSlices(s1, s2 []string, skip string) []string {
+func Merge(s1, s2 []string, skip string) []string {
 	unique := make(map[string]struct{})
 	for _, v := range s1 {
 		if len(v) < 1 {
