@@ -2,7 +2,7 @@ package slices
 
 import "testing"
 
-func TestGetWithout(t *testing.T) {
+func TestWithoutThis(t *testing.T) {
 	t.Fatal("test not implemented")
 }
 
@@ -31,8 +31,8 @@ func TestMergeStringSlices(t *testing.T) {
 		{[]string{}, []string{}, "", []string{}},
 	}
 	for _, test := range tests {
-		if got := MergeStringSlices(test.slice1, test.slice2, test.skip); !isTheSame(got, test.want) {
-			t.Errorf("mergeStringSlices(%+v, %+v, %s) = %v", test.slice1, test.slice2, test.skip, got)
+		if got := Merge(test.slice1, test.slice2, test.skip); !isTheSame(got, test.want) {
+			t.Errorf("merge(%+v, %+v, %s) = %v", test.slice1, test.slice2, test.skip, got)
 		}
 	}
 }
